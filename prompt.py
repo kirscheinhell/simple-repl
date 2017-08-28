@@ -7,6 +7,10 @@ class prompt(repl.Repl):
     
     def Eval_test(self, *arg):
         print("Test passed")
+    
+    def Eval_editor(self, arg):
+        import editor
+        editor.main(arg[0])
 
 command = prompt()
 repl.run(command)

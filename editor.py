@@ -1,8 +1,13 @@
-import sys
+#import sys
 
-new_file = sys.argv[0]
-with open(new_file, 'w+') as file:
-    text = str()
-    while input() != 'EOF':
-        file.write(text)
-        text = input()
+def main(arg):
+    new_file = arg
+    lines = []
+    print('START')
+    line = input()
+    while line != 'EOF':
+        lines.append((line))
+        line = input()
+    print(lines)
+    with open(new_file, 'w+') as file:
+        file.write('\n'.join(lines))
